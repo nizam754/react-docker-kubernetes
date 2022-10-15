@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: react-docker-kubernetes
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react-docker-kubernetes
+  template:
+    metadata:
+      labels:
+        app: react-docker-kubernetes
+    spec:
+      containers:
+      - name: react-docker-kubernetes
+        image: nizam754/react-docker-kubernetes
+        ports:
+        - containerPort: 80
